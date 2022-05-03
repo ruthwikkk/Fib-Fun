@@ -8,8 +8,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-    val viewModel: MainViewModel by viewModels()
-    var adapter: MainAdapter? = null
+    private val viewModel: MainViewModel by viewModels()
+    private var adapter: MainAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         initObservers()
     }
 
-    fun initViews(){
+    private fun initViews(){
         adapter = MainAdapter()
         val rvNumbers = findViewById<RecyclerView>(R.id.rv_numbers)
         rvNumbers.adapter = adapter
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun initObservers(){
+    private fun initObservers(){
         viewModel.getNumbers().observe(this) {
             adapter?.submitList(it)
         }

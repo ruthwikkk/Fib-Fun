@@ -1,11 +1,9 @@
-package com.ruthwikkk.audifytask.database
+package com.ruthwikkk.fibonaccigenerator.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.ruthwikkk.fibonaccigenerator.database.FibNumber
-import com.ruthwikkk.fibonaccigenerator.database.MainDao
 
 @Database(entities = [FibNumber::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
